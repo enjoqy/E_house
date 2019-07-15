@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.junhi.dao.AgentDao">
+    <resultMap id="agentMapper" type="org.junhi.domain.Agent">
+        <id property="" column=""/>
+        <result property="aId" column="a_id"/>
+        <result property="aName" column="a_name"/>
+        <result property="aAge" column="a_age"/>
+        <result property="aSex" column="a_sex"/>
+        <result property="aPhone" column="a_phone"/>
+        <result property="aEmail" column="a_email"/>
+        <result property="aDepartment" column="a_department"/>
+        <result property="aImages" column="a_images"/>
+    </resultMap>
+
+    <!--查询所有的业务员-->
+    <select id="findAll" resultMap="agentMapper">
+        select * from agent;
+    </select>
+
+    <!--根据id查询一条记录-->
+    <select id="findAgentById" resultMap="agentMapper">
+        select * from agent where a_id=#{id};
+    </select>
+
+
+</mapper>
