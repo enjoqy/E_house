@@ -1,10 +1,13 @@
 package org.junhi.controller;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.junhi.domain.Agent;
 import org.junhi.service.AgentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
@@ -26,8 +29,9 @@ public class AgentController {
      */
     @RequestMapping(value = "/findAll", produces="text/html;charset=UTF-8")
     @ResponseBody
-    public List<Agent> findAll() {
-        return agentService.findAll();
+    public  PageInfo<Agent> findAll(@RequestParam(value = "currentPage", defaultValue = "1")Integer currentPage,
+                                    @RequestParam(value = "pageSize", defaultValue = "10")Integer pageSize) {
+        return agentService.findAll(currentPage, pageSize);
     }
 
     /**

@@ -13,7 +13,7 @@
 
     <!--查询所有的用户-->
     <select id="findAll" resultMap="userMapper">
-        select * from user;
+        select * from user
     </select>
 
 

@@ -79,6 +79,12 @@
         <property name="dataSource" ref="dataSource"></property>
         <!-- 读取mapper映射文件 使用mapperLocations属性，可以使用目录文件通配符，可以同时读取多个mapper文件-->
         <property name="mapperLocations" value="classpath:org/junhi/dao/*.xml"/>
+        <!--配置分页插件-->
+        <property name="plugins">
+            <array>
+                <bean class="com.github.pagehelper.PageInterceptor"/>
+            </array>
+        </property>
     </bean>
 
     <!--配置dao接口所在的包-->

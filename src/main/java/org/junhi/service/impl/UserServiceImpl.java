@@ -1,6 +1,9 @@
 package org.junhi.service.impl;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.junhi.dao.UserDao;
+import org.junhi.domain.Agent;
 import org.junhi.domain.User;
 import org.junhi.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +22,11 @@ public class UserServiceImpl implements UserService {
     private UserDao userDao;
 
     @Override
-    public List<User> findAll() {
-        return userDao.findAll();
+    public PageInfo<User> findAll(Integer currentPage, Integer pageSize) {
+        //使用pagehelper插件进行分页
+        PageHelper.startPage(currentPage, pageSize);
+        List<User> userList = userDao.findAll();
+        PageInfo<User> userPageInfo = new PageInfo<>(userList);
+        return userPageInfo;
     }
 }

@@ -1,8 +1,7 @@
 package org.junhi.service;
 
+import com.github.pagehelper.PageInfo;
 import org.junhi.domain.User;
-
-import java.util.List;
 
 /**
  * @author junhi
@@ -14,5 +13,5 @@ public interface UserService {
      * 查询所有的用户
      * @return
      */
-    List<User> findAll();
+    PageInfo<User> findAll(Integer currentPage, Integer pageSize);
 }

@@ -1,6 +1,8 @@
 package org.junhi.service;
 
+import com.github.pagehelper.PageInfo;
 import org.junhi.domain.Agent;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -14,7 +16,7 @@ public interface AgentService {
      * 查询所有的业务员
      * @return
      */
-    List<Agent> findAll();
+    PageInfo<Agent> findAll(Integer currentPage, Integer pageSize);
 
     /**
      * 根据id查询一条记录
