@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 import java.io.Serializable;
 
 /**
- * 代理人实体类
+ * 代理人实体类  的
  * @author junhi
  * @date 2019/7/15 8:52
  */
