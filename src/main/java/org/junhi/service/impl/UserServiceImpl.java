@@ -22,11 +22,21 @@ public class UserServiceImpl implements UserService {
     private UserDao userDao;
 
     @Override
+    public User queryUserByName(User user) {
+        return userDao.findUserByName(user.getUName());
+    }
+
+    @Override
     public PageInfo<User> findAll(Integer currentPage, Integer pageSize) {
         //使用pagehelper插件进行分页
         PageHelper.startPage(currentPage, pageSize);
         List<User> userList = userDao.findAll();
         PageInfo<User> userPageInfo = new PageInfo<>(userList);
         return userPageInfo;
+    }
+
+    @Override
+    public void saveUser(User user) {
+        userDao.saveUser(user);
     }
 }

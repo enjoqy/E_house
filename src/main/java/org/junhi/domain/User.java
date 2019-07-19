@@ -20,8 +20,13 @@ public class User implements Serializable {
 
     private Integer uid;
     private String uName;
+    private String uPassword;
     private Character uSex;
     private String uPhone;
     private String uEmail;
+    /**
+     * 是否使用邮箱验证过，默认为N
+     */
+    private String uStatus;
 
 }

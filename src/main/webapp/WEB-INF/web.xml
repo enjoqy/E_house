@@ -4,10 +4,7 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
 
-    <!--默认打开的页面-->
-    <welcome-file-list>
-        <welcome-file>index.html</welcome-file>
-    </welcome-file-list>
+
 
     <!-- 解决跨域请求配置-->
     <filter>
@@ -68,9 +65,9 @@
     </context-param>
 
     <!--定期清理没有实用的bean实例，避免出现内存溢出的问题-->
-    <listener>
-        <listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
-    </listener>
+<!--    <listener>-->
+<!--        <listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>-->
+<!--    </listener>-->
 
 
 
@@ -88,7 +85,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>dispatcherServlet</servlet-name>
-        <url-pattern>/index.html</url-pattern>
+        <url-pattern>/</url-pattern>
     </servlet-mapping>
 
     <!--解决中文乱码过滤器-->
@@ -136,7 +133,10 @@
     </filter-mapping>
 
 
-
+    <!--默认打开的页面-->
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
 
 
 

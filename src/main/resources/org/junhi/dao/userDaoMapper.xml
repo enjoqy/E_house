@@ -6,14 +6,32 @@
     <resultMap id="userMapper" type="org.junhi.domain.User">
         <id property="uid" column="u_id"/>
         <result property="uName" column="u_name"/>
+        <result property="uPassword" column="u_password"/>
         <result property="uSex" column="u_sex"/>
         <result property="uPhone" column="u_phone"/>
         <result property="uEmail" column="u_email"/>
+        <result property="uStatus" column="u_status"/>
     </resultMap>
 
     <!--查询所有的用户-->
     <select id="findAll" resultMap="userMapper">
         select * from user
+    </select>
+
+    <!--注册用户，保存一条user对象-->
+    <insert id="saveUser" >
+        insert into user (u_name, u_password, u_sex, u_phone, u_email)
+        values (#{uName},#{uPassword},#{uSex},#{uPhone},#{uEmail})
+    </insert>
+
+    <!--根据id查询用户-->
+    <select id="findUserById" resultMap="userMapper">
+        select * from user where u_id=#{uId}
+    </select>
+
+    <!--根据name查询用户-->
+    <select id="findUserByName" resultMap="userMapper">
+        select * from user where u_name=#{uName}
     </select>
 
 
