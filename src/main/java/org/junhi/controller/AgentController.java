@@ -24,7 +24,7 @@ public class AgentController {
      * 查询所有的业务员
      * @return
      */
-    @RequestMapping(value = "/findAll", produces="text/html;charset=UTF-8")
+    @RequestMapping(value = "/findAll")
     @ResponseBody
     public  PageInfo<Agent> findAll(@RequestParam(value = "currentPage", defaultValue = "1")Integer currentPage,
                                     @RequestParam(value = "pageSize", defaultValue = "10")Integer pageSize) {
@@ -36,7 +36,7 @@ public class AgentController {
      * @param id
      * @return
      */
-    @RequestMapping(value = "/findAgentById", produces="text/html;charset=UTF-8")
+    @RequestMapping(value = "/findAgentById")
     @ResponseBody
     public Agent findAgentById(Integer id) {
         return agentService.findAgentById(id);

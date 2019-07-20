@@ -28,7 +28,7 @@ public class UserController {
      *
      * @return
      */
-    @RequestMapping(value = "/findAll", produces = "text/html;charset=UTF-8")
+    @RequestMapping(value = "/findAll")
     @ResponseBody
     public PageInfo<User> findAll(@RequestParam(value = "currentPage", defaultValue = "1") Integer currentPage,
                                   @RequestParam(value = "pageSize", defaultValue = "10") Integer pageSize) {
@@ -41,7 +41,7 @@ public class UserController {
      * @param user
      * @return
      */
-    @RequestMapping(value = "/register", produces = "text/html;charset=UTF-8")
+    @RequestMapping(value = "/register")
     @ResponseBody
     public ResultInfo register(User user) {
         ResultInfo resultInfo = new ResultInfo();
@@ -80,7 +80,7 @@ public class UserController {
      * @param user
      * @return
      */
-    @RequestMapping(value = "/login", produces = "text/html;charset=UTF-8")
+    @RequestMapping(value = "/login")
     @ResponseBody
     public ResultInfo login(User user) {
         ResultInfo resultInfo = new ResultInfo();
